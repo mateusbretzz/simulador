@@ -9,10 +9,10 @@ Machado::Machado(string descricaoArma, int minForca, int maxForca)
 
 int Machado::gerarForcaAtaque()
 {
-    return maxForca - minForca;
+    return maxForca - minForca + 5;
 }
 
 string Machado::gerarRuidoAtaque()
 {
-    return "cush cush";
+    return "toiiiinnnn";
 }

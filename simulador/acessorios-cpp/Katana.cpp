@@ -14,5 +14,5 @@ int Katana::gerarForcaAtaque()
 
 string Katana::gerarRuidoAtaque()
 {
-    return "cush cush";
+    return "swish";
 }

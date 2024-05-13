@@ -14,5 +14,5 @@ int Martelo::gerarForcaAtaque()
 
 string Martelo::gerarRuidoAtaque()
 {
-    return "cush cush";
+    return "tooma";
 }

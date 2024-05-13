@@ -9,10 +9,10 @@ Garfo::Garfo(string descricaoArma, int minForca, int maxForca)
 
 int Garfo::gerarForcaAtaque()
 {
-    return maxForca - minForca;
+    return maxForca - minForca + 10;
 }
 
 string Garfo::gerarRuidoAtaque()
 {
-    return "cush cush";
+    return "clink";
 }

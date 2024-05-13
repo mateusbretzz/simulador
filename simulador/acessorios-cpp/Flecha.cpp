@@ -9,10 +9,10 @@ Flecha::Flecha(string descricaoArma, int minForca, int maxForca)
 
 int Flecha::gerarForcaAtaque()
 {
-    return maxForca - minForca;
+    return maxForca - minForca - 5;
 }
 
 string Flecha::gerarRuidoAtaque()
 {
-    return "cush cush";
+    return "twang";
 }

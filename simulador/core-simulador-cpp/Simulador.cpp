@@ -6,6 +6,7 @@
 
 using std::cout;
 using std::endl;
+using std::cin;
 
 
 
@@ -117,28 +118,58 @@ string Simulador::criarSaida(Personagem* personagem1, Personagem* personagem2, i
 
 void Simulador::iniciarSimulacao()
 {
-     // Define a semente baseada na hora atual
+    // Define a semente baseada na hora atual
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int dano = 0;
     Personagem* personagemAtacante;
     Personagem* personagemDefesa;
+
     while(calcularVidaEquipe(1) > 0 && calcularVidaEquipe(2) > 0)
     {
         int equipeQueAtaca =  (std::rand() % 2) == 0 ? 1 : 2;
 
         if (equipeQueAtaca == 1)
         {
-            personagemAtacante = proximoPersonagem(equipe1);
-            personagemDefesa = proximoPersonagem(equipe2);
+            cout << "Escolha o personagem atacante para a Equipe 1:" << endl;
+                for (int i = 0; i < equipe1.size(); ++i) {
+                cout << i + 1 << ". " << equipe1[i]->getNome() << endl;
+        }
+            int escolhaAtacante;
+            cin >> escolhaAtacante;
+            personagemAtacante = equipe1[escolhaAtacante - 1];
+
+            cout << "Escolha o personagem defensor para a Equipe 2:" << endl;
+                for (int i = 0; i < equipe2.size(); ++i) {
+                cout << i + 1 << ". " << equipe2[i]->getNome() << endl;
+        }
+            int escolhaDefensor;
+            cin >> escolhaDefensor;
+            personagemDefesa = equipe2[escolhaDefensor - 1];
+
+            dano = criarCombate(personagemAtacante, personagemDefesa);
+            cout << criarSaida(personagemAtacante, personagemDefesa, dano) << endl;
         }
 
         if (equipeQueAtaca == 2)
         {
-            personagemAtacante = proximoPersonagem(equipe2);
-            personagemDefesa = proximoPersonagem(equipe1);
+            cout << "Escolha o personagem atacante para a Equipe 2:" << endl;
+                for (int i = 0; i < equipe2.size(); ++i) {
+                cout << i + 1 << ". " << equipe2[i]->getNome() << endl;
         }
+            int escolhaAtacante;
+            cin >> escolhaAtacante;
+            personagemAtacante = equipe2[escolhaAtacante - 1];
 
-        dano = criarCombate(personagemAtacante, personagemDefesa);
-        cout << criarSaida(personagemAtacante, personagemDefesa, dano) << endl;
+            cout << "Escolha o personagem defensor para a Equipe 1:" << endl;
+                for (int i = 0; i < equipe1.size(); ++i) {
+                cout << i + 1 << ". " << equipe1[i]->getNome() << endl;
+        }
+            int escolhaDefensor;
+            cin >> escolhaDefensor;
+            personagemDefesa = equipe1[escolhaDefensor - 1];
+
+            dano = criarCombate(personagemAtacante, personagemDefesa);
+            cout << criarSaida(personagemAtacante, personagemDefesa, dano) << endl;
+        }
     }
 }

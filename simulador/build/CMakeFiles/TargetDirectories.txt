@@ -1,0 +1,3 @@
+/mnt/c/Users/Mateus Bretz/Documents/UFMG_20241/PDS_2/simulador/simulador/build/CMakeFiles/my_program.dir
+/mnt/c/Users/Mateus Bretz/Documents/UFMG_20241/PDS_2/simulador/simulador/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Mateus Bretz/Documents/UFMG_20241/PDS_2/simulador/simulador/build/CMakeFiles/rebuild_cache.dir
